@@ -4,4 +4,4 @@ class BreweriesCLI::CLI
     puts "Hello there!"
   end 
   
-end 
+end
