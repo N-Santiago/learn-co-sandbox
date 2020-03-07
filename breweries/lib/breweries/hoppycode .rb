@@ -3,12 +3,14 @@ class Breweries::HoppyCode
   @@all = []
   
   def initialize(hash)
-    @name = name 
-    @@all << self 
+    save 
   end 
   
   def all
-    @@all
+
+  end 
+  
+  def save
   end 
   
 end  
