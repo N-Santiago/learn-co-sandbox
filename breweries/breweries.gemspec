@@ -8,17 +8,15 @@ Gem::Specification.new do |spec|
   spec.version       = Breweries::VERSION
   spec.authors       = ["'Norberto Santiago'"]
   spec.email         = ["'norbertosantiago82@gmail.com'"]
-
-  spec.summary       = %q{TODO: "Flatiron CLI Project."}
-  spec.description   = %q{TODO: "Use API to get a list of breweries in specific cities."}
+  spec.summary       = %q{"Flatiron CLI Project."}
+  spec.description   = %q{"Use API to get a list of breweries in specific cities."}
   spec.homepage      = "https://github.com/N-Santiago/breweries-cli"
-  spec.license       = "MIT"
+  spec.license       = "MIT" 
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/N-Santiago/breweries-cli"
     spec.metadata["changelog_uri"] = "https://github.com/N-Santiago/breweries-cli"
@@ -35,8 +33,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
+  
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "httparty" 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec", "~> 3.0" 
 end
