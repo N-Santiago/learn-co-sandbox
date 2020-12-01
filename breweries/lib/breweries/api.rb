@@ -1,12 +1,19 @@
-class Breweries::API 
+class Breweries::API
   
-  def self.get_breweries
-    @breweries_hash = HTTParty.get("https://api.openbrewerydb.org/breweries")
+  def self.get_breweries(input)
+    @breweries_hash = HTTParty.get("https://api.openbrewerydb.org/breweries?by_city=#{input}")
+    return if @breweries_hash.empty? #empty array handle 
+    @breweries_hash.each do |brewery|
     breweries_obj = {
-      name: @breweries_hash["name"],
-      city: @breweries_hash["city"]
+      name: brewery["name"],
+      street: brewery["street"],
+      city: brewery["city"],
+      phone: brewery["phone"],
+      website_url: brewery["website_url"] 
     }
-     binding.pry 
-  end 
-  
+    Breweries::HoppyCode.new(breweries_obj)
+  end
 end 
+ 
+   
+end  
